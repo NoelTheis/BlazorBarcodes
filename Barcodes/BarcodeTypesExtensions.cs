@@ -1,8 +1,8 @@
-﻿using BarcoderWrapper.Encoders;
+﻿using BlazorBarcodes.Encoders;
 using System.Linq;
 using System.Reflection;
 
-namespace BarcoderWrapper.Barcodes
+namespace BlazorBarcodes.Barcodes
 {
     public static class BarcodeTypesExtensions
     {

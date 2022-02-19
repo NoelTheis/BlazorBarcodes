@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BarcoderWrapper.Barcodes
+namespace BlazorBarcodes.Barcodes
 {
     public enum BarcodeTypes
     {

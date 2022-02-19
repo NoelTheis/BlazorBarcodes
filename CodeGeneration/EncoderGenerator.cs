@@ -1,5 +1,5 @@
 ﻿using Barcoder;
-using BarcoderWrapper.Encoders;
+using BlazorBarcodes.Encoders;
 using Microsoft.CodeAnalysis;
 using System.Diagnostics;
 using System.Linq;
@@ -54,7 +54,7 @@ namespace CodeGeneration
             sb.Append($@"
 using {typeSymbol.ContainingNamespace.ToDisplayString()};
 using {nameof(Barcoder)};
-namespace {nameof(BarcoderWrapper)}.{nameof(BarcoderWrapper.Encoders)}
+namespace {nameof(BlazorBarcodes)}.{nameof(BlazorBarcodes.Encoders)}
 {{
     public class {GenerateEncoderClassName(typeSymbol)} : {nameof(BaseEncoder)}
     {{");

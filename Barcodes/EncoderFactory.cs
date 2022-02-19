@@ -1,7 +1,7 @@
-﻿using BarcoderWrapper.Barcodes;
+﻿using BlazorBarcodes.Barcodes;
 using System;
 
-namespace BarcoderWrapper.Encoders
+namespace BlazorBarcodes.Encoders
 {
     public static class EncoderFactory
     {

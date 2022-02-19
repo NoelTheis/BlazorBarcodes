@@ -1,10 +1,10 @@
-﻿using BarcoderWrapper.Encoders;
+﻿using BlazorBarcodes.Encoders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace BarcoderWrapper.Barcodes
+namespace BlazorBarcodes.Barcodes
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class Barcode : Attribute

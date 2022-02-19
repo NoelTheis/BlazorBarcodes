@@ -1,6 +1,6 @@
 ﻿using Barcoder;
 
-namespace BarcoderWrapper.Encoders
+namespace BlazorBarcodes.Encoders
 {
     public interface IEncoder
     {

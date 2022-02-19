@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BarcoderWrapper.Encoders
+namespace BlazorBarcodes.Encoders
 {
     public abstract class BaseEncoder : IEncoder
     {

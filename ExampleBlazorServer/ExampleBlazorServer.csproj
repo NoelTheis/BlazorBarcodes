@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Barcodes\Barcodes.csproj" />
     <ProjectReference Include="..\BlazorBarcodes\BlazorBarcodes.csproj" />
+    <ProjectReference Include="..\CodeGenerationDependencies\CodeGenerationDependencies.csproj" />
   </ItemGroup>
 
 </Project>

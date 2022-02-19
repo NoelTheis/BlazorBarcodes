@@ -5,7 +5,7 @@
 
 
     <select @bind="Type">
-        @foreach (var description in BarcoderWrapper.Barcodes.Barcode.All)
+        @foreach (var description in BlazorBarcodes.Barcodes.Barcode.All)
         {
         <option value="@description.Type" disabled="@(!description.Encoder.CanEncode(Content, out string error))">
             @(string.Format("{0}{1}", description.Name, error is not null ? $": {error}" : ""))
@@ -14,11 +14,11 @@
     </select>
     
 
-    <Barcode Style="width:200px;height:200px"
+    <BarcodeComponent Style="width:200px;height:200px"
                       BarcodeType="@Type"
                       Content="@Content"
                       IncludeEANContentAsText="true">
-    </Barcode>
+    </BarcodeComponent>
 
 </div>
 

@@ -1,14 +1,14 @@
 ﻿using Barcoder;
 using Barcoder.Renderers;
-using BarcoderWrapper.Barcodes;
-using BarcoderWrapper.Encoders;
+using BlazorBarcodes.Barcodes;
+using BlazorBarcodes.Encoders;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
 
 namespace BlazorBarcodes
 {
-    public partial class Barcode
+    public partial class BarcodeComponent
     {
         [Parameter]
         public string Style { get; set; } = "";
@@ -23,7 +23,7 @@ namespace BlazorBarcodes
         public BarcodeTypes BarcodeType { get; set; }
 
         /// <summary>
-        /// Encoder to used for barcode generation, overrides <seealso cref="Barcode"/>
+        /// Encoder to used for barcode generation, overrides <seealso cref="BarcodeComponent"/>
         /// </summary>
         [Parameter]
         public IEncoder? Encoder

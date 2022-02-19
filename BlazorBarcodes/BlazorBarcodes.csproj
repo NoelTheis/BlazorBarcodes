@@ -1,26 +1,62 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
+	<PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
 	  <Nullable>enable</Nullable>
+	  <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	  <Company>None</Company>
+	  <Authors>Noel Theis</Authors>
+	  <Owners>Noel Theis</Owners>
+	  <Description>A simple wrapper around huysentruitw´s Barcoder (https://github.com/huysentruitw/barcoder),
+providing a component for displaying 1D &amp; 2D barcodes</Description>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageProjectUrl>https://github.com/NoelTheis/BlazorBarcodes</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/NoelTheis/BlazorBarcodes</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <PackageVersion>1.0.4</PackageVersion>
+	  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
-
   
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Barcoder" Version="1.1.0" />
     <PackageReference Include="Barcoder.Renderer.Svg" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.14" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Barcodes\Barcodes.csproj" />
+	  <ProjectReference Include="..\Barcodes\Barcodes.csproj">
+		  <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+		  <IncludeAssets>Barcodes.dll</IncludeAssets>
+	  </ProjectReference>
+
+	  <ProjectReference Include="..\CodeGenerationDependencies\CodeGenerationDependencies.csproj">
+		  <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+		  <IncludeAssets>CodeGenerationDependencies.dll</IncludeAssets>
+	  </ProjectReference>
+	  <None Include="$(TargetDir)\*.dll" Pack="true" PackagePath="lib\$(TargetFramework)"></None>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
+
+  <ItemGroup>
+	<None Include="..\LICENSE" Pack="true" PackagePath="" />
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
 
 </Project>
