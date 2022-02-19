@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Barcoder" Version="1.1.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0-3.final" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" PrivateAssets="all" />
+		<PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+		<PackageReference Include="System.Reflection.Metadata" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\CodeGenerationDependencies\CodeGenerationDependencies.csproj" />
+	</ItemGroup>
+
+</Project>

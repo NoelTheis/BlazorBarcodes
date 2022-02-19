@@ -1,0 +1,31 @@
+﻿@page "/"
+
+<div style="display:flex; flex-direction:column">
+    <input type="text" @bind="Content">
+
+
+    <select @bind="Type">
+        @foreach (var description in BarcoderWrapper.Barcodes.Barcode.All)
+        {
+        <option value="@description.Type" disabled="@(!description.Encoder.CanEncode(Content, out string error))">
+            @(string.Format("{0}{1}", description.Name, error is not null ? $": {error}" : ""))
+        </option>
+        }
+    </select>
+    
+
+    <Barcode Style="width:200px;height:200px"
+                      BarcodeType="@Type"
+                      Content="@Content"
+                      IncludeEANContentAsText="true">
+    </Barcode>
+
+</div>
+
+@code {
+    public BarcodeTypes Type { get; set; }
+
+    public IEncoder Encoder { get; } = new DataMatrixEncoder();
+
+    public string Content { get; set; } = "";
+}
