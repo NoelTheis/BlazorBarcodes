@@ -4,7 +4,7 @@
 		<TargetFramework>net5.0</TargetFramework>
 		<LangVersion>10.0</LangVersion>
 		<Nullable>enable</Nullable>
-		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Company>None</Company>
 		<Authors>Noel Theis</Authors>
 		<Owners>Noel Theis</Owners>
@@ -17,7 +17,7 @@
 		<RepositoryUrl>https://github.com/NoelTheis/BlazorBarcodes</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageVersion>1.0.4</PackageVersion>
+		<PackageVersion>1.0.5</PackageVersion>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 	</PropertyGroup>
 
