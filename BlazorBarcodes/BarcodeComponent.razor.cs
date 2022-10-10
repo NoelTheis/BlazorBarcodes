@@ -62,9 +62,11 @@ namespace BlazorBarcodes
         public bool IncludeEANContentAsText { get; set; }
 
         [Parameter]
-        public bool ShowExceptionMessages { get; set; } = true;
+        public RenderFragment<string>? ErrorTemplate { get; set; }
 
         private string Markup { get; set; } = "";
+
+        private string ErrorMessage { get; set; } = "";
 
         private IRenderer Renderer => new Barcoder.Renderer.Svg.SvgRenderer(IncludeEANContentAsText);
 
@@ -72,6 +74,7 @@ namespace BlazorBarcodes
         {
             try
             {
+                ErrorMessage = "";
                 if (Content is not null && EncodingFunction is not null) 
                 {
                     MarkupGenerator generator = new(
@@ -83,11 +86,14 @@ namespace BlazorBarcodes
             }
             catch (Exception e)
             {
-                if (ShowExceptionMessages)
-                    Markup = e.Message;
+                ErrorMessage = e.Message;
             }
 
             StateHasChanged();
         }
+
+        [Obsolete($"{nameof(ShowExceptionMessages)} is obsolete, use {nameof(ErrorTemplate)} instead.")]
+        [Parameter]
+        public bool ShowExceptionMessages { get; set; } = true;
     }
 }

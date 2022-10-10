@@ -1,9 +1,17 @@
 ﻿<div style="@Style">
-    @((MarkupString)Markup)
+    @if (string.IsNullOrWhiteSpace(ErrorMessage))
+    {
+        @((MarkupString)Markup)
+    }
+    else
+    {
+        if (ErrorTemplate is not null)
+        {
+            @ErrorTemplate(ErrorMessage)
+        }
+        else if (ShowExceptionMessages)
+        {
+            @ErrorMessage;
+        }
+    }  
 </div>
-
-
-@code {
-
-
-}
