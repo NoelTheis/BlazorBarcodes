@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleBlazorServer", "Exam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeGenerationDependencies", "CodeGenerationDependencies\CodeGenerationDependencies.csproj", "{D4ED9ADA-73BF-4220-93CD-B90254F891EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WASM", "Demo.WASM\Demo.WASM.csproj", "{EC2CAE5C-C454-4B1A-BB1E-7A309B594EDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D4ED9ADA-73BF-4220-93CD-B90254F891EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4ED9ADA-73BF-4220-93CD-B90254F891EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4ED9ADA-73BF-4220-93CD-B90254F891EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2CAE5C-C454-4B1A-BB1E-7A309B594EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2CAE5C-C454-4B1A-BB1E-7A309B594EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2CAE5C-C454-4B1A-BB1E-7A309B594EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2CAE5C-C454-4B1A-BB1E-7A309B594EDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
