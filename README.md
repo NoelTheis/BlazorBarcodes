@@ -30,6 +30,10 @@ This is a really simple wrapper around huysentruitw´s [Barcoder](https://github
 
     PM> Install-Package BlazorBarcodes
 
+## Demo
+
+[WASM](https://noeltheis.github.io/BlazorBarcodes/)
+
 ## Usage
 
 Add the following using statements.
@@ -46,7 +50,7 @@ Pass a string content and either a BarcodeType(enum), Encoder or encoding functi
                     Content="Hello World!">
 </BarcodeComponent>
 ```
-The codes are renderer as SVG by default.
+The codes are rendered as SVG by default.
 
 If you´d like to quickly play around with the different barcodes, you create an easy selection like this.
 
@@ -84,9 +88,16 @@ Passed to the Barcoder renderer
 bool IncludeEANContentAsText
 ```
 
-Shows exception message instead of the rendered code, in case the content is not compatible with the encoder
+If you wish to display some sort of error message, in case of a rendering issue, pass an error template to the BarcodeComponent
 ```csharp
-bool ShowExceptionMessages
+<BarcodeComponent Style="width:200px;height:200px"
+                    BarcodeType="@Type"
+                    Content="@Content"
+                    IncludeEANContentAsText="true">
+    <ErrorTemplate>
+        @context
+    </ErrorTemplate>
+</BarcodeComponent>
 ```
 
 ## Encoders
